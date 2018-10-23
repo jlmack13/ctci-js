@@ -3,18 +3,19 @@
 /********************
 ******Hash Map*******
 ********************/
+import createCleanCharMap from '../../helpers/cleanCharMap';
 
-const createCharMap = (str) => {
-    const charMap = {};
-    for(let char of str.replace(/[^\w]/g, "").toLowerCase()) {
-        charMap[char] = charMap[char] + 1 || 1;
-    }
-    return charMap;
-}
+// const createCharMap = (str) => {
+//     const charMap = {};
+//     for(let char of str.replace(/[^\w]/g, "").toLowerCase()) {
+//         charMap[char] = charMap[char] + 1 || 1;
+//     }
+//     return charMap;
+// }
 
 const checkPermutation = (strA, strB) => {
-    const charMapA = createCharMap(strA); 
-    const charMapB = createCharMap(strB); 
+    const charMapA = createCleanCharMap(strA); 
+    const charMapB = createCleanCharMap(strB); 
 
     if(Object.keys(charMapA).length !== Object.keys(charMapB).length) { 
         return false;
